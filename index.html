@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク管理ツール</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="motivation-bg"></div>
+    <div class="container">
+        <div class="motivation-header">
+            <h1>タスク管理ツール</h1>
+            <div class="motivation-quote">
+                <p>「小さな一歩から、大きな変化が始まる」</p>
+                <span class="quote-author">- アインシュタイン</span>
+            </div>
+        </div>
+        
+        <!-- タスク追加フォーム -->
+        <div class="task-form">
+            <div class="form-header">
+                <span class="material-icons">add_circle</span>
+                <h3>新しいタスクを追加</h3>
+            </div>
+            <input type="text" id="task-title" placeholder="今日の目標を設定してみましょう！" required>
+            <select id="task-priority">
+                <option value="low">優先度: 低</option>
+                <option value="medium">優先度: 中</option>
+                <option value="high">優先度: 高</option>
+            </select>
+            <input type="date" id="task-date" placeholder="期限日">
+            <button onclick="addTask()">
+                <span class="material-icons">check_circle</span>
+                タスク追加
+            </button>
+        </div>
+
+        <!-- タスクリスト -->
+        <div class="task-list">
+            <div class="list-header">
+                <h2>タスク一覧</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="material-icons">check_circle</span>
+                        <p>完了: <span id="completed-count">0</span></p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="material-icons">pending</span>
+                        <p>進行中: <span id="in-progress-count">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div id="tasks"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
